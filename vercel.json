@@ -1,9 +1,7 @@
 {
-  "routes": [
-    { "src": "/api/dropbox", "dest": "/api/dropbox.js" },
-
-    { "src": "/s/(.*)",   "dest": "/api/dropbox?__p=/s/$1" },
-    { "src": "/scl/(.*)", "dest": "/api/dropbox?__p=/scl/$1" }
+  "rewrites": [
+    { "source": "/s/:path*",   "destination": "/api/dropbox?__p=/s/:path*" },
+    { "source": "/scl/:path*", "destination": "/api/dropbox?__p=/scl/:path*" }
   ],
   "headers": [
     {
